@@ -1,0 +1,134 @@
+/////////////Prime numbers////////////
+function isPrime(num) {
+  for (let i = 2; i < num; i++) {
+    if ( num % i === 0 ) {
+       return false;
+     }
+   }
+   return true;
+}
+function display(n) {
+  let arr = [];
+  for ( let i = 2; i < n; i++) {
+    if ( isPrime(i) ) {
+      arr.push(i);
+    }
+  }
+  console.log(arr);
+}
+
+display(100);
+///////////min(a, b)////////////
+function min(a, b){
+  if(a < b){
+    return a
+  }
+  else return  b
+}
+console.log(min(15, 7));
+/////////////fib////////////
+function fib(num) {
+  if (num <= 1) {
+    return 1;
+  }
+  return fib(num - 1) + fib(num - 2);
+}
+console.log(fib(1));
+console.log(fib(2));
+console.log(fib(3));
+console.log(fib(4));
+console.log(fib(5));
+console.log(fib(6));
+///////////getDecimal//////////
+
+function getDecimal(num){
+ let str =  num.toString();
+  let decimal = parseFloat(num.toString().split('.')[1]);
+  return decimal;
+}
+console.log(getDecimal(7.8876));
+//////////////ucFirst///////////////
+function ucFirst(str){
+  return str[0].toUpperCase() + str.slice(1);
+
+}
+console.log(ucFirst('name'));
+///////////checkSpam/////////
+function checkSpam(str) {
+if(str.includes('xxx') || str.includes('XXX')){
+  return true
+}
+else return false
+}
+console.log(checkSpam('haghjbchbixxxjhiu'));
+console.log(checkSpam('name'));
+//////////truncate////////
+function truncate(str, maxLength){
+  if(str.length > maxLength){
+    return str.slice(0, maxLength - 3) + '...'
+  }
+}
+console.log(truncate('Hello world!!!', 8));
+/////////////isEmpty////////////
+let obj = {
+  name: 'kjjhv'
+};
+function isEmpty(obj){
+ for(let key in obj){
+   if(key){
+     return false
+   }
+ }
+ return true
+}
+console.log(isEmpty(obj));
+///////////multiplyNumeric/////////////
+let object ={
+  name: 'John',
+  surname: 'Doe',
+  age: 20,
+  size: 28,
+}
+function multiplyNumeric(obj){
+  for(let key in obj) {
+    if (typeof obj[key] == 'number') {
+      obj[key] *= 2
+    }
+  }
+}
+multiplyNumeric(object);
+console.log(object);
+/////////////find//////////////////////
+let arr = [3, 6, 9, 77, 45];
+  function find(arr, value){
+    arr.forEach((item, index, arr) => {
+      if(item === value){
+        console.log(item)
+      }
+    })
+         return -1;
+}
+  find(arr, 45);
+///////2//////////
+let arr1 = [3, 6, 9, 77, 45];
+function find1(arr1, value1){
+  for(let i = 0; i < arr1.length; i++){
+    if(value1 === arr1[i]){
+      return arr1[i];
+    }
+  }
+  return  -1
+}
+console.log(find1(arr1, 55));
+
+////////////Camelize/////////////
+
+function camelize(str){
+  return str.split('-').map((word, index) => {
+    if(index === 0){
+      return word
+    }
+    else return word[0].toUpperCase() + word.slice(1)
+  }).join('');
+}
+console.log(camelize('my-short-string'));
